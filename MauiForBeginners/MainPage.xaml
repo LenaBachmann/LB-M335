@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiForBeginners.MainPage"
+             xmlns:viewmodel="clr-namespace:MauiForBeginners.ViewModel"
+             x:DataType="viewmodel:MainViewModel" >
+
+    <VerticalStackLayout>
+
+        <SwipeView Padding="10">
+            <SwipeView.RightItems>
+                <SwipeItems>
+                    <SwipeItem Text="Save"
+               
+               BackgroundColor="LightPink"/>
+                </SwipeItems>
+            </SwipeView.RightItems>
+            
+            <Frame>
+                <Label Text="{Binding Quote}"
+                FontSize="24"/>
+            </Frame>
+            
+        </SwipeView>
+
+
+        <Button Text="New Quote"
+        Command="{Binding GetCommand}"
+        BackgroundColor="LightPink"
+        TextColor="Black"
+        FontAttributes="Bold" />
+        
+        <!--
+        <CollectionView 
+                ItemsSource="{Binding Items}"
+                SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="{x:Type x:String}">
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Save"
+                                   Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}},Path=SaveCommand}"
+                                   CommandParameter="{Binding .}"
+                                   BackgroundColor="Red"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Grid Padding="0,5">
+                            <Frame>
+                                <Label Text="{Binding .}"
+                           FontSize="24"/>
+                            </Frame>
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+-->
+
+        
+        
+    </VerticalStackLayout>
+
+
+</ContentPage>
