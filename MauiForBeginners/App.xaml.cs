@@ -2,11 +2,14 @@
 {
     public partial class App : Application
     {
-        public App()
+        public static QuoteRepository QuoteRepo { get; private set; }
+        public App(QuoteRepository repo)
         {
             InitializeComponent();
 
             MainPage = new AppShell();
+
+            QuoteRepo = repo;
         }
     }
 }

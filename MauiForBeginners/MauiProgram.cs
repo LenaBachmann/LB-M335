@@ -20,7 +20,8 @@ namespace MauiForBeginners
 
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<MainViewModel>();
-
+            string dbPath = FileAccessHelper.GetLocalFilePath("people.db3");
+            builder.Services.AddSingleton<QuoteRepository>(s => ActivatorUtilities.CreateInstance<QuoteRepository>(s, dbPath));
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
